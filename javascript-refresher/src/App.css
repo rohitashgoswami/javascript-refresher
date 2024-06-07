@@ -37,46 +37,61 @@
   }
 }
 
+
+/* Navbar */
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
   padding: 10px 20px;
+  background-color: #000;
 }
 
 .logo img {
-  height: 40px; 
+  height: 40px;
 }
 
-.nav-items ul {
+.nav-links {
   list-style: none;
   display: flex;
 }
 
-.nav-items li {
-  margin-left: 20px;
+.nav-links li {
+  padding: 0 20px;
 }
 
-.nav-items a {
+.nav-links a {
   text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 8px 12px;
-  transition: background-color 0.3s;
+  color: #fff;
+  font-size: 18px;
 }
 
-.nav-items a:hover {
-  background-color: #575757;
-  border-radius: 4px;
+/* Media queries */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #000;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .nav-links li {
+      padding: 10px 0;
+  }
 }
+
+
 
 
 
 /* logIn form */
 
-
-.container{
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,14 +99,20 @@
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-} 
+}
 
 .login-form {
   background-color: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 300px;
+  position: relative;
+}
+
+.login-form.dark-mode {
+  background-color: #333;
+  color: white;
 }
 
 form {
@@ -121,6 +142,12 @@ input {
   width: 93%;
 }
 
+.login-form.dark-mode input {
+  border: 1px solid #555;
+  background-color: #555;
+  color: white;
+}
+
 button {
   padding: 10px;
   font-size: 16px;
@@ -134,4 +161,91 @@ button {
 
 button:hover {
   background-color: #0056b3;
-} 
+}
+
+.login-form.dark-mode button {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.login-form.dark-mode .error-message {
+  color: lightcoral;
+}
+
+/* Toggle Switch Styles */
+.dark-mode-toggle {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+

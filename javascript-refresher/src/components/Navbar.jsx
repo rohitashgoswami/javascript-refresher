@@ -1,22 +1,23 @@
 import React from 'react'
 
-export default function Navbar(props) { 
+export default function Navbar(props) {
     return (
-        <div>
-            <nav className="navbar">
+        <>
+            <div className="navbar">
                 <div className="logo">
-                    <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1647490619965/P1dsNgj-f1.png" alt="Logo" />
+                    <a href="/"><img src="https://www.battlegroundsmobileindia.com/common/img/common/logo.png" alt="Logo" /></a>
                 </div>
-                <div className="nav-items">
-                    <ul>
-                        <li><a href="/">{props.homeText}</a></li>
-                        <li><a href="/">About</a></li>
-                        <li><a href="/">Services</a></li>
-                        <li><a href="/">Contact</a></li>
+                <nav>
+                    <ul className="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Download</a></li>
+                        <li><a href="#">Support</a></li>
                     </ul>
-                </div>
-            </nav>
-        </div>
+                </nav>
+            </div>
+        </>
     )
 }
 
